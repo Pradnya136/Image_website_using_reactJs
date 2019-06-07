@@ -11,7 +11,7 @@ import { robots } from "./robots";
 
 class Pic extends Component {
   state = {
-    robots: [robots],
+    robots: [],
     searchfield: ""
   };
 
@@ -25,15 +25,16 @@ class Pic extends Component {
   }
 
   onSearchChange = event => {
-    this.setState({ searchfield: console.log(event.target.value) });
+    this.setState({ searchfield: event.target.value });
+  };
+
+  render() {
     const filteredImg = this.state.robots.filter(robots => {
       return robots.name
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
-  };
 
-  render() {
     return (
       <>
         <Particles
@@ -153,7 +154,7 @@ class Pic extends Component {
           <Navigation />
           <ImageLinkComp searchChange={this.onSearchChange} />
 
-          <PicList robots={robots} />
+          <PicList robots={filteredImg} />
           {/* <h1>hello</h1> */}
         </div>
       </>
