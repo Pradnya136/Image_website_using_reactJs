@@ -1,0 +1,10 @@
+nav {
+  color: rgb(164, 185, 230);
+  background-color: transparent;
+  text-shadow: 10px white;
+  font-size: 21px;
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 27px;
+}
